@@ -1,0 +1,124 @@
+/* Colores */
+:root {
+    --blanco: #fafafa;
+    --negro: #000000;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "Poppins", sans-serif;
+}
+body {
+    height: auto;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 200px auto;
+    background-color: var(--blanco);
+}
+.header {
+    height: 100%;
+    width: 100%;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
+}
+.header--title {
+    font-size: 3.6rem;
+    font-weight: 700;
+}
+.header--info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.header--info__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.header--info__text {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.main {
+    display: grid;
+    height: 100%;
+    width: 100vw;
+    grid-template-rows: repeat(2, 700px);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+    justify-items: center;
+}
+.main .images-item {
+    position: relative;
+    width: 85%;
+    height: 85%;
+}
+.main .images-item .images-item--name {
+    position: absolute;
+    left: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.main .images-item .images-item--job {
+    position: absolute;
+    top: 0;
+    left: calc(100%);
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: left;
+    height: auto;
+    writing-mode: sideways-rl;
+}
+.main .images-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main .item-5 {
+    align-self: flex-end;
+}
+.main .item-2 {
+    align-self: flex-end;
+}
+@media (max-width: 950px) {
+    body {
+        grid-template-rows: 250px auto;
+    }
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+    }
+    .main {
+        height: auto;
+        grid-template-rows: repeat(3, minmax(250px, 550px));
+        grid-template-columns: 50% 50%;
+        row-gap: 20px;
+    }
+    .main .images-item {
+        position: relative;
+        width: 75%;
+        height: 75%;
+    }
+    .main .images-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .main {
+        row-gap: 100px;
+    }
+    .main .item-4 {
+        align-self: flex-end;
+    }
+}
